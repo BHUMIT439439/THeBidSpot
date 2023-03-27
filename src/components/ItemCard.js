@@ -111,7 +111,7 @@ const ItemCard = ({ listing, id, onDelete, onEdit }) => {
     <>
       <div className="col-sm-3">
   <div className="card mt-4 card-item">
-  <img src={listing.imgUrls[0]} className="card-img-top img-fluid" alt="..." style={{height:"250px"}} data-aos-delay={300} />
+  <img src={listing.imgUrls[0]} className="card-img-top img-fluid" alt="..." style={{height:"250px"}} data-aos-delay={200} data-aos="zoom-in"/>
     <div className="card-body">
       <h5 className="card-title text-start">{listing.itemName}</h5>
       <p className="card-text text-start">{listing.itemDec}</p>

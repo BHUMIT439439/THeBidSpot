@@ -21,37 +21,6 @@ const AuctionNow = () => {
   const auth = getAuth();
   const currentEmail = auth.currentUser.email;
 
-  // useEffect(()=>{
-  //   const fetchListing = async () => {
-  //     try {
-  //       const listingsRef = collection(db, "items");
-  //       const q = query(
-  //         listingsRef,
-  //         where("useRef", "!=", auth.currentUser.uid),
-  //         limit(8),
-  //         );
-  //       const querySnap = await getDocs(q);
-  //       const lastVisible = querySnap.docs[querySnap.docs.length - 1];
-  //       setLastFetchListing(lastVisible);
-  //       const listings = [];
-  //       querySnap.forEach((doc) => {
-  //         return listings.push({
-  //           id: doc.id,
-  //           data: doc.data(),
-  //         });
-  //       });
-  //       setListing(listings);
-  //       setLoading(false);
-  //       //console.log(listing[0])
-  //     }catch (error) {
-  //       console.log(error);
-  //       toast.error("Unble to fetch data");
-  //     }
-  //   };
-  //   //func call
-  //   fetchListing();
-  // },[])
-
  const getAllItems = async () =>{
   const listingsRef = collection(db, "items");
   const q = query(
