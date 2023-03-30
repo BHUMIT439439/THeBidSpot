@@ -109,9 +109,9 @@ const ItemCard = ({ listing, id, onDelete, onEdit }) => {
 
   return (
     <>
-      <div className="col-sm-3">
-  <div className="card mt-4 card-item">
-  <img src={listing.imgUrls[0]} className="card-img-top img-fluid" alt="..." style={{height:"250px"}} data-aos-delay={200} data-aos="zoom-in"/>
+      <div className="col-md-4 mb-4">
+  <div className="card card-item">
+  <img src={listing.imgUrls[0]} className="card-img-top img-fluid" alt="..." style={{height:"250px"}} data-aos-delay={300} />
     <div className="card-body">
       <h5 className="card-title text-start">{listing.itemName}</h5>
       <p className="card-text text-start">{listing.itemDec}</p>
@@ -125,8 +125,9 @@ const ItemCard = ({ listing, id, onDelete, onEdit }) => {
            </div>
            {bidTimeOut==false && listing.currentBidder=="" && <p className="card-text text-start">Become the first bidder!</p>}
            {bidTimeOut==true && listing.currentBidder=="" && <p className="card-text text-start">There is no any bidder</p>}
-           {listing.currentBidder == auth.currentUser.email && basePrice!=listing.currentPrice && <span className="text-primary" onClick={() => {clickOptOut(id)}} style = {{cursor:'pointer'}}><u>opt-out</u></span>}
-           
+           {listing.currentBidder == auth.currentUser.email && basePrice!=listing.currentPrice && <span className=" text-primary" onClick={() => {clickOptOut(id)}} style = {{cursor:'pointer'}}><u>opt-out</u></span>}
+           {listing.currentBidder != auth.currentUser.email && basePrice!=listing.currentPrice && <br></br>}
+
           <Timer duration={duration} setBidTimeOut={setBidTimeOut}/>
           {
             bidTimeOut?(

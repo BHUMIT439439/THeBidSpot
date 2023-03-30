@@ -188,7 +188,7 @@ const Profile = () => {
           <Spinner />
         ) : listings && listings.length > 0 ? (
           <>
-          <div className="text-center container py-3">
+          <div className="text-center container">
     <h3>Your Listing !</h3>
     
             <div className="row"> 
